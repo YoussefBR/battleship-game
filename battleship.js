@@ -1,8 +1,8 @@
 const BOARD_SIZE = 10;
 const SHIPS = [
-    { size: 5, count: 0, name: "Carrier" },
-    { size: 4, count: 0, name: "Battleship" },
-    { size: 3, count: 0, name: "Cruiser" },
+    { size: 5, count: 1, name: "Carrier" },
+    { size: 4, count: 1, name: "Battleship" },
+    { size: 3, count: 2, name: "Cruiser" },
     { size: 2, count: 1, name: "Destroyer" }
 ];
 
@@ -110,7 +110,7 @@ function checkSetupComplete() {
         hidePlayerShips(2);
         startGame();
     } else if (player1ShipsPlaced === totalShips && currentPlayer === 1) {
-        //hidePlayerShips(1);
+        hidePlayerShips(1);
         currentPlayer = 2;
         document.getElementById('player2Ships').classList.remove('hidden');
         updateGameInfo("Player 2, place your ships");
